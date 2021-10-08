@@ -1,4 +1,4 @@
-import React, { FC, useState, useRef } from 'react';
+import React, { FC, useState } from 'react';
 import styled from './Posts.module.scss';
 import { T } from "../Pages/MainPage";
 import Modal from "../Modal";
@@ -9,7 +9,6 @@ interface IPost {
 }
 
 const Posts: FC<IPost> = ({posts, loading}) => {
-    const ref = useRef(null);
     const [url, setUrl] = useState<string>('');
     const [name, setName] = useState<string>('');
     const [show, setShow] = useState<boolean>(false);
@@ -34,7 +33,6 @@ const Posts: FC<IPost> = ({posts, loading}) => {
             <div className={styled.posts}>
                 {posts.map((post: T) => (
                     <div
-                        ref={ref}
                         key={post.id}
                         className={styled.post}
 
