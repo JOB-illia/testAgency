@@ -1,0 +1,33 @@
+@import "../../scss/utils/mixins";
+@import "../../scss/utils/function";
+@import "../../scss/utils/variables";
+
+.pagination {
+  list-style: none;
+  @include  dflex(stretch, wrap, center);
+  padding: 0 rem(20);
+  border-radius: rem(4);
+
+  &__item {
+    border: 1px solid $gray-500;
+    border-left: none;
+
+    &:first-child {
+      border-left: 1px solid $gray-500;
+    }
+  }
+
+  &__link {
+    @include  reset-button();
+    padding: rem(15);
+    color: black;
+    font-size: rem(12);
+    font-weight: 500;
+    transition: all 0.3s ease-in-out;
+
+    &:hover {
+      background-color: #2f55d4;
+      color: $white;
+    }
+  }
+}

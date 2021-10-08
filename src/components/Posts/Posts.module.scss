@@ -1,0 +1,64 @@
+@import "../../scss/utils/mixins";
+@import "../../scss/utils/function";
+@import "../../scss/utils/variables";
+
+.posts {
+  @include  container($wrap);
+  @include  dflex(stretch, wrap, space-between);
+  padding: 0 rem(20);
+}
+
+.post {
+  position: relative;
+  flex-basis: 30%;
+  margin-bottom: rem(30);
+  padding: rem(20);
+  border-radius: rem(4);
+  border: 1px solid $gray-300;
+
+  &__id {
+    position: absolute;
+    top: rem(-15);
+    right: rem(-10);
+    @include  dflex(center, wrap, center);
+    width: rem(30);
+    height: rem(30);
+    border-radius: rem(50);
+    background-color: $gray-500;
+    color: $black;
+    font-size: rem(14);
+    font-weight: 400;
+
+    &_album {
+      background-color: #2f55d4;
+      color: $white;
+      right: auto;
+      left: rem(-10);
+    }
+  }
+
+  &__image {
+    position: relative;
+    width: rem(150);
+    height: rem(150);
+    margin: 0 auto rem(20);
+    overflow: hidden;
+  }
+
+  &__img {
+    @include full-abs();
+    margin: auto;
+    object-fit: cover;
+    object-position: center center;
+    width: 100%;
+    height: auto;
+  }
+
+  &__title {
+    position: relative;
+    margin-top: rem(20);
+    font-size: rem(18);
+    font-weight: bold;
+    text-align: center;
+  }
+}
